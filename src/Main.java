@@ -1,15 +1,18 @@
-//TIP コードを<b>実行</b>するには、<shortcut actionId="Run"/> を押すか
-// ガターの <icon src="AllIcons.Actions.Execute"/> アイコンをクリックします。
 public class Main {
     public static void main(String[] args) {
-        //TIP ハイライトされたテキストにキャレットがある状態で <shortcut actionId="ShowIntentionActions"/> を押すと
-        // IntelliJ IDEA によるその修正案を確認できます。
-        System.out.printf("Hello and welcome!");
+        Hero h = new Hero();
+        Matango m = new Matango();
+        h.hp = 40;
+        h.name = "ミナト";
+        System.out.println(h.name + "の現在のHP: " + h.hp);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP <shortcut actionId="Debug"/> を押してコードのデバッグを開始します。<icon src="AllIcons.Debugger.Db_set_breakpoint"/> ブレークポイントを 1 つ設定しましたが、
-            // <shortcut actionId="ToggleLineBreakpoint"/> を押すといつでも他のブレークポイントを追加できます。
-            System.out.println("i = " + i);
-        }
+        King k = new King();
+        k.talk(h);
+        Inn i = new Inn();
+        System.out.println("宿屋で回復中...");
+        i.checkIn(h);
+        System.out.println(h.name + "の現在のHP: " + h.hp);
+        h.sleep();
+        h.attack(m);
     }
 }
